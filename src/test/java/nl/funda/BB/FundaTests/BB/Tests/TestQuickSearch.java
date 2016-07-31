@@ -58,6 +58,7 @@ public class TestQuickSearch extends TestBase {
     public void test01_Price_Success(String testDescription, String priceMinInput, String priceMaxInput, Boolean useDefaultValues, String searchExpected) {
 
         //Given
+        addLocationSearchQuery("");
         addMinPriceSearchQuery(priceMinInput, useDefaultValues);
         addMaxPriceSearchQuery(priceMaxInput, useDefaultValues);
 
@@ -74,6 +75,7 @@ public class TestQuickSearch extends TestBase {
     public void test02_Price_Invalid(String testDescription, String priceMinInput, String priceMaxInput, Boolean useDefaultValues, String searchExpected) {
 
         //Given
+        addLocationSearchQuery("");
         addMinPriceSearchQuery(priceMinInput, useDefaultValues);
         addMaxPriceSearchQuery(priceMaxInput, useDefaultValues);
 
