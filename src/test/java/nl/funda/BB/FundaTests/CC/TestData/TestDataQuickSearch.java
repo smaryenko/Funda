@@ -16,12 +16,18 @@ public class TestDataQuickSearch {
                 $("Valid land (upper case)",        "FLEVOLAND",                  "15",               "Provincie Flevoland, +15 km"),
                 $("Valid postcode no lettes",       "1321",                       "0",                "Postcode 1321"),
                 $("Trim spaces",                    "    Almere   ",              "0",                "Almere"),
-                $("Trim spaces only",               "    ",                       "0",                "Land Nederland")
+                $("Trim spaces only",               "    ",                       "0",                "Land Nederland"),
+
+                //Failed tests
+                $("Advanced search",                "Amsterdam&Almere",           "1",                "Amsterdam, Almere, +1 km")
         );
     }
 
     public static Object[] testLocation_Invalid() {
         return $(
+                $("null word",                        "null",                                           "null"),
+                $("partial word",                     "amster",                                         "amster"),
+                $("Invalid number",                   "-1",                                             "-1"),
                 $("Invalid postcode",                 "1000ZZ",                                         "1000zz"),
                 $("Invalid text",                     "blabla",                                         "blabla"),
                 $("Invalid number",                   "-1",                                             "-1"),
